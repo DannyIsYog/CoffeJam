@@ -12,4 +12,10 @@ public class DialogueSentence
 {
     public string actor;
     [TextArea(3, 5)] public string sentence;
+    public SoundEffectObject soundEffectObj;
+
+    public void PlayAudio()
+    {
+        soundEffectObj.Play();
+    }
 }
