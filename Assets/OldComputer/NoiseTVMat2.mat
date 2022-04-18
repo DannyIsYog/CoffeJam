@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RetroShaderMat
+  m_Name: NoiseTVMat2
   m_Shader: {fileID: -6465566751694194690, guid: af9e2726ec0f35f48a2a959b646438fa, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -19,6 +19,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_d5569d09fbef457f8d4bacf0f906ee45:
+        m_Texture: {fileID: 8400000, guid: 976aa8fc65e04a34da84758f409f9dde, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -32,8 +36,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_5984b05cceaf49978747acf45ffa7f00: 0.005
+    - Vector1_5984b05cceaf49978747acf45ffa7f00: 0
     - Vector1_64302e998cf547bf9f3fc06576ce1e43: 1
-    - Vector1_766875922f5542f5848705826d7427bf: 7
+    - Vector1_766875922f5542f5848705826d7427bf: 200
     m_Colors: []
   m_BuildTextureStacks: []
