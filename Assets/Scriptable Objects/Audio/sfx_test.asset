@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7571859501d747fda5a4bf2cb4a0a60d, type: 3}
   m_Name: sfx_test
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 5b04514e64a874b4f8177801830a19e8, type: 3}
   volume: {x: 0.5, y: 0.5}
   pitch: {x: 1, y: 1}

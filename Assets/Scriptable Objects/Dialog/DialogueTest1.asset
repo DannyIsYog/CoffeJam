@@ -15,13 +15,19 @@ MonoBehaviour:
   sentences:
   - actor: Narrator
     sentence: Knock knock
+    soundEffectObj: {fileID: 0}
   - actor: You
     sentence: Whos there?
+    soundEffectObj: {fileID: 0}
   - actor: Narrator
     sentence: Nobody
+    soundEffectObj: {fileID: 0}
   - actor: You
     sentence: Nobody who?
+    soundEffectObj: {fileID: 0}
   - actor: You
     sentence: ...
+    soundEffectObj: {fileID: 0}
   - actor: You
     sentence: Bruh
+    soundEffectObj: {fileID: 0}
