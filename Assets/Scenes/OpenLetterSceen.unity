@@ -228,6 +228,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LetterPrefab: {fileID: 4973431998941551398, guid: f929a9cd695c75d4d83ae230b061f280, type: 3}
   spawnPoint: {fileID: 1126710640}
+  totalLetters: 0
+  currentLetters: 0
+  loadStory: 1
 --- !u!1 &1531789631
 GameObject:
   m_ObjectHideFlags: 0
