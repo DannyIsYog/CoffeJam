@@ -1478,6 +1478,7 @@ MonoBehaviour:
   minCoords: {x: -5, y: -5.2}
   maxCoords: {x: 4.8, y: 4.3}
   soundEffectClick: {fileID: 11400000, guid: f2c2af1d80596894da4d08ae3a60b850, type: 2}
+  storySceneIdx: 1
 --- !u!114 &917520318
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -547,6 +547,7 @@ GameObject:
   - component: {fileID: 651910638}
   - component: {fileID: 651910637}
   - component: {fileID: 651910636}
+  - component: {fileID: 651910640}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -636,6 +637,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &651910640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651910635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77955b5222424f6c80a8a02653910cd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &824851306
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,11 +789,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 1135588564}
   backgroundController: {fileID: 1135588567}
+  canvas: {fileID: 651910639}
   computerSceneIdx: 3
   lettersSceneIdx: 2
   currentStoryScene: {fileID: 11400000, guid: 5bf72ec5a936c3b4cbca61d3c0b894c3, type: 2}
   computerSceneLoaded: 0
-  miniGameComplete: 0
+  lettersSceneLoaded: 0
+  computerSceneComplete: 0
+  lettersSceneComplete: 0
 --- !u!114 &1135588567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -961,6 +977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2041473932}
   - component: {fileID: 2041473933}
+  - component: {fileID: 2041473934}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -1008,6 +1025,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2041473934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041473931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1135588566}
+          m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+          m_MethodName: NextSentence
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2051633880
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -33,7 +34,7 @@ public class DialogueManager : MonoBehaviour
             DisableTextBox();
             return;
         }
-        
+
         EnableTextBox();
         sentences.Clear();
         state = State.Running;
@@ -53,6 +54,14 @@ public class DialogueManager : MonoBehaviour
         }
 
         DialogueSentence dialogueSentence = sentences.Dequeue();
+        
+        if (dialogueSentence.SpeakerName.Equals(" ", StringComparison.OrdinalIgnoreCase))
+        {
+            DisableTextBox();
+            return;
+        }
+
+        EnableTextBox();
         string sentence = dialogueSentence.sentence;
         speakerText.text = dialogueSentence.SpeakerName;
         Color speakerColor = dialogueSentence.speaker.textColor;
@@ -65,7 +74,7 @@ public class DialogueManager : MonoBehaviour
             StartCoroutine(TypeWrite(sentence));
         }
         else sentenceText.text = sentence;
-        
+
         if (dialogueSentence.soundEffectObj != null)
             dialogueSentence.PlayAudio();
     }

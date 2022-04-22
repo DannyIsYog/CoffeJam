@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MouseFollow : MonoBehaviour
 {
@@ -11,17 +12,26 @@ public class MouseFollow : MonoBehaviour
     [SerializeField] private Vector2 minCoords;
     [SerializeField] private Vector2 maxCoords;
     [SerializeField] private SoundEffectObject soundEffectClick;
+    [SerializeField] private int storySceneIdx;
 
     private Transform myTransform;
+    private static GameController gameControllerInstance;
 
     public void Start()
     {
         Cursor.visible = false;
         myTransform = mouseRect.transform;
+        gameControllerInstance = GameController.instance;
     }
 
     public void Update()
     {
+        if (emailGenerator.allTaskComplete)
+        {
+            gameControllerInstance.computerSceneComplete = true;
+            SceneManager.LoadScene(storySceneIdx);
+        }
+        
         UpdateCursorPosition();
 
         if (Input.GetMouseButtonDown(0))

@@ -67,19 +67,19 @@ public class SoundEffectObject : ScriptableObject
         return source;
     }
     
-    [CustomEditor(typeof(SoundEffectObject))]
-    private class MyEditor : Editor
-    {
-        public override void OnInspectorGUI()
-        {
-            DrawDefaultInspector();
-
-            SoundEffectObject SoundEffectObject = (SoundEffectObject)target;
-            if (GUILayout.Button("Play Preview"))
-                SoundEffectObject.PlayPreview();
-            
-            if (GUILayout.Button("Stop Preview"))
-                SoundEffectObject.StopPreview();
-        }
-    }
+    // [CustomEditor(typeof(SoundEffectObject))]
+    // private class MyEditor : Editor
+    // {
+    //     public override void OnInspectorGUI()
+    //     {
+    //         DrawDefaultInspector();
+    //
+    //         SoundEffectObject SoundEffectObject = (SoundEffectObject)target;
+    //         if (GUILayout.Button("Play Preview"))
+    //             SoundEffectObject.PlayPreview();
+    //         
+    //         if (GUILayout.Button("Stop Preview"))
+    //             SoundEffectObject.StopPreview();
+    //     }
+    // }
 }

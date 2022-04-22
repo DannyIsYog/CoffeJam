@@ -7,12 +7,15 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private BackgroundController backgroundController;
+    [SerializeField] private RectTransform canvas;
     [SerializeField] private int computerSceneIdx;
     [SerializeField] private int lettersSceneIdx;
     
     public StorySceneObject currentStoryScene;
     public bool computerSceneLoaded;
-    public bool miniGameComplete;
+    public bool lettersSceneLoaded;
+    public bool computerSceneComplete;
+    public bool lettersSceneComplete;
     public static GameController instance;
 
     private void Awake()
@@ -25,6 +28,7 @@ public class GameController : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(canvas);
     }
 
     private void Start()
@@ -41,11 +45,6 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
             NextSentence();
 
-        if (currentStoryScene.name.Equals("day01_09", StringComparison.OrdinalIgnoreCase) && !computerSceneLoaded)
-        {
-            SceneManager.LoadScene(computerSceneIdx);
-            computerSceneLoaded = true;
-        }
 
         if (dialogueManager.IsComplete())
         {
@@ -63,6 +62,30 @@ public class GameController : MonoBehaviour
 
     public void NextSentence()
     {
+        if (IsMiniGamesDay()) return;
         dialogueManager.DisplayNextSentence();
+    }
+
+    private bool IsMiniGamesDay()
+    {
+        if (currentStoryScene.name.Equals("day01_09", StringComparison.OrdinalIgnoreCase))
+        {
+            if (!computerSceneLoaded)
+            {
+                SceneManager.LoadScene(computerSceneIdx);
+                computerSceneLoaded = true;
+                return true;
+            }
+            
+            // if (computerSceneComplete && !lettersSceneLoaded)
+            // {
+            //     Cursor.visible = true;
+            //     Cursor.lockState = CursorLockMode.None;
+            //     SceneManager.LoadScene(lettersSceneIdx);
+            //     lettersSceneLoaded = true;
+            // }
+        }
+
+        return false;
     }
 }
