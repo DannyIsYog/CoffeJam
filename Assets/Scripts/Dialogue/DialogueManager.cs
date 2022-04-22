@@ -5,32 +5,40 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private RectTransform textBox;
+    [SerializeField] private TextMeshProUGUI speakerText;
+    [SerializeField] private TextMeshProUGUI sentenceText;
     [SerializeField] private bool typeWrite;
     [SerializeField] private float typeSpeed = 20;
 
-    public static DialogueManager instance;
+    [HideInInspector] public State state = State.Complete;
+
+    public enum State
+    {
+        Complete,
+        Running
+    }
+
     private Queue<DialogueSentence> sentences;
 
     private void Awake()
     {
-        if (instance != null && instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        instance = this;
         sentences = new Queue<DialogueSentence>();
-        DontDestroyOnLoad(gameObject);
     }
 
-    public void StartDialogue(DialogueObject dialogueObject)
+    public void StartDialogue(StorySceneObject storySceneObject)
     {
-        Debug.Log("Starting dialogue obj: " + dialogueObject);
+        if (storySceneObject == null)
+        {
+            DisableTextBox();
+            return;
+        }
+        
+        EnableTextBox();
         sentences.Clear();
+        state = State.Running;
 
-        foreach (DialogueSentence sentence in dialogueObject.sentences)
+        foreach (DialogueSentence sentence in storySceneObject.sentences)
             sentences.Enqueue(sentence);
 
         DisplayNextSentence();
@@ -45,29 +53,51 @@ public class DialogueManager : MonoBehaviour
         }
 
         DialogueSentence dialogueSentence = sentences.Dequeue();
-        string sentence = dialogueSentence.actor + ": " + dialogueSentence.sentence;
-        dialogueText.text = "";
+        string sentence = dialogueSentence.sentence;
+        speakerText.text = dialogueSentence.SpeakerName;
+        Color speakerColor = dialogueSentence.speaker.textColor;
+        speakerText.color = new Color(speakerColor.r, speakerColor.g, speakerColor.b, 1);
+        sentenceText.text = "";
 
         if (typeWrite)
         {
             StopAllCoroutines();
             StartCoroutine(TypeWrite(sentence));
         }
-        else dialogueText.text = sentence;
+        else sentenceText.text = sentence;
+        
+        if (dialogueSentence.soundEffectObj != null)
+            dialogueSentence.PlayAudio();
     }
 
     private IEnumerator TypeWrite(string sentence)
     {
         foreach (char letter in sentence)
         {
-            dialogueText.text += letter;
+            sentenceText.text += letter;
             yield return new WaitForSeconds(1 / typeSpeed);
         }
     }
 
     public void EndDialogue()
     {
-        dialogueText.text = "";
-        Debug.Log("End of dialogue");
+        speakerText.text = "";
+        sentenceText.text = "";
+        state = State.Complete;
+    }
+
+    public bool IsComplete()
+    {
+        return state == State.Complete;
+    }
+
+    private void EnableTextBox()
+    {
+        textBox.gameObject.SetActive(true);
+    }
+
+    public void DisableTextBox()
+    {
+        textBox.gameObject.SetActive(false);
     }
 }

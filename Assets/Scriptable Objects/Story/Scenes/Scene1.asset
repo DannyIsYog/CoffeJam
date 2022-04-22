@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0772287ec62f480e97b63c0a545391cc, type: 3}
+  m_Name: Scene1
+  m_EditorClassIdentifier: 
+  background: {fileID: 21300000, guid: 8b7d3dcaf77b29744a3e32e766788160, type: 3}
+  nextStoryScene: {fileID: 11400000, guid: 49cf30599432a13469e095f80bb918af, type: 2}
+  sentences:
+  - speaker: {fileID: 11400000, guid: 5cc93c75fe4fd694d9e7b08d608bcd4a, type: 2}
+    sentence: Its morning! Time to wake up!
+    soundEffectObj: {fileID: 11400000, guid: fbe398d8c8789284aa63951a31c629dc, type: 2}
+  - speaker: {fileID: 11400000, guid: 5cc93c75fe4fd694d9e7b08d608bcd4a, type: 2}
+    sentence: WAKE UP!
+    soundEffectObj: {fileID: 11400000, guid: 186cb3c30677cc04781a5d488915c599, type: 2}
