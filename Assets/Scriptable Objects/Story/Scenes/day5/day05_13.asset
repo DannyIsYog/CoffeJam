@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0772287ec62f480e97b63c0a545391cc, type: 3}
+  m_Name: day05_13
+  m_EditorClassIdentifier: 
+  background: {fileID: 21300000, guid: ad6890b3d1e54454ab0672cffbe14ccd, type: 3}
+  nextStoryScene: {fileID: 0}
+  sentences:
+  - speaker: {fileID: 11400000, guid: 5cc93c75fe4fd694d9e7b08d608bcd4a, type: 2}
+    sentence: Wow! Congratulations! You're the perfect business woman!
+    soundEffectObj: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 5cc93c75fe4fd694d9e7b08d608bcd4a, type: 2}
+    sentence: You're ready to kill it out there!
+    soundEffectObj: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 5cc93c75fe4fd694d9e7b08d608bcd4a, type: 2}
+    sentence: It was great watching you work! Bye, hope to hear from you and your
+      great achivements in the real world!
+    soundEffectObj: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 182bbab5078aa444ebab9082b662ce85, type: 2}
+    sentence: '* The End *'
+    soundEffectObj: {fileID: 0}

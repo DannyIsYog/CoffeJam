@@ -1,12 +1,18 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(BackgroundController), typeof(DialogueManager))]
 public class GameController : MonoBehaviour
 {
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private BackgroundController backgroundController;
+    [SerializeField] private int computerSceneIdx;
+    [SerializeField] private int lettersSceneIdx;
     
     public StorySceneObject currentStoryScene;
+    public bool computerSceneLoaded;
+    public bool miniGameComplete;
     public static GameController instance;
 
     private void Awake()
@@ -34,6 +40,12 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
             NextSentence();
+
+        if (currentStoryScene.name.Equals("day01_09", StringComparison.OrdinalIgnoreCase) && !computerSceneLoaded)
+        {
+            SceneManager.LoadScene(computerSceneIdx);
+            computerSceneLoaded = true;
+        }
 
         if (dialogueManager.IsComplete())
         {

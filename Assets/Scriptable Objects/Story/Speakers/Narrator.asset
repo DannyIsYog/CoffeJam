@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Narrator
   m_EditorClassIdentifier: 
   speakerName: Narrator
-  textColor: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 0}
+  textColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 0}
