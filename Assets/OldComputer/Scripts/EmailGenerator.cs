@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using Random = System.Random;
 
 public class EmailGenerator : MonoBehaviour
 {
     [SerializeField] private EmailsObject emailsObject;
-    [SerializeField] private int numOfEmails;
     [SerializeField] private GameObject emailPreviewPrefab;
     [SerializeField] private Transform emailPreviewParent;
     [SerializeField] private TextMeshProUGUI senderText;
@@ -27,7 +26,10 @@ public class EmailGenerator : MonoBehaviour
 
     private void Start()
     {
-        emails = emailsObject.GetRandomEmailList(numOfEmails);
+        Random rnd = new Random();
+        int rndIdx = rnd.Next(2, 5);
+        
+        emails = emailsObject.GetRandomEmailList(rndIdx);
 
         foreach (Email email in emails)
         {

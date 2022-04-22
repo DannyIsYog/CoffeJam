@@ -13,19 +13,71 @@ MonoBehaviour:
   m_Name: Emails
   m_EditorClassIdentifier: 
   emails:
-  - sender: someone@gmail.com
-    recipient: me@gmail.com
-    body: Whats up dud
+  - sender: killerwaves@fm.pt
+    recipient: anassassin@gmail.com
+    body: You're the number #7 listener of our radio. Thank you so much for your
+      support.
     reply: 
-  - sender: toby@gmail.com
-    recipient: me@gmail.com
-    body: Wheres my money
-    reply: I spent it all
-  - sender: toby@gmail.com
-    recipient: me@gmail.com
-    body: I NEED IT NOW
+  - sender: freegdtsockstoday@uwish.pt
+    recipient: anassassin@gmail.com
+    body: "Hi,\r\\n\nwe are offering free gdt socks, do you want some?\r\\n\nBest
+      Regards,\r\\n\nGDT socks"
+    reply: I would love some! Please give me details!
+  - sender: rissol@msn.pt
+    recipient: anassassin@gmail.com
+    body: RISSOL IS GOOD. EAT RISSOL.
     reply: 
-  - sender: sarah36525@gmail.com
-    recipient: me@gmail.com
+  - sender: weirdwebsite@strange.es
+    recipient: anassassin@gmail.com
     body: Hot sexy ladies in your area. Sign in now and purchase the premium package!
-    reply: Im in
+    reply: Not really my type.
+  - sender: codfixe@msn.pt
+    recipient: anassassin@gmail.com
+    body: It's your friend from college Mike, do you want to meet up?
+    reply: Not really.
+  - sender: ecossystems@play.pt
+    recipient: anassassin@gmail.com
+    body: Join us. Join us. Join us.
+    reply: 
+  - sender: totallyreliablesource@trustmebro.com
+    recipient: anassassin@gmail.com
+    body: There's an alien on the loose. Be careful.
+    reply: 
+  - sender: highschool@msn.pt
+    recipient: anassassin@gmail.com
+    body: 'We are invinting you to our high school reunion at the end of the month.
+
+      Please
+      come.'
+    reply: 
+  - sender: slaythehousedown@bootmama.com
+    recipient: anassassin@gmail.com
+    body: You better work. Slay.
+    reply: Thank you ;)
+  - sender: deh@msn.com
+    recipient: anassassin@gmail.com
+    body: I didn't mean it. I'm sorry. Call me.
+    reply: 
+  - sender: yournextdoorcoworker@work.pt
+    recipient: anassassin@gmail.com
+    body: Do you want to grab some coffee tomorrow?
+    reply: Only if it increases the Killer vibes.
+  - sender: myhead@body.yours
+    recipient: anassassin@gmail.com
+    body: I'm hurting :(
+    reply: 
+  - sender: wearenotkillers@msn.pt
+    recipient: anassassin@gmail.com
+    body: 'Join us at Killers Anonymous today: //htps::wearenotkillers.pt'
+    reply: 
+  - sender: lemon@msn.ca
+    recipient: anassassin@gmail.com
+    body: 'I''m sweet and sour, baby.
+
+      Send me an email if you''re interested
+      ;)'
+    reply: 
+  - sender: imafrog@lilypad.pt
+    recipient: anassassin@gmail.com
+    body: I'm a frog. croac. croac.
+    reply: Hi frog, i'm a human. *human sounds*

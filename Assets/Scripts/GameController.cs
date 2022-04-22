@@ -64,6 +64,7 @@ public class GameController : MonoBehaviour
     {
         if (IsMiniGamesDay()) return;
         dialogueManager.DisplayNextSentence();
+        ResetMiniGames();
     }
 
     private bool IsMiniGamesDay()
@@ -77,15 +78,88 @@ public class GameController : MonoBehaviour
                 return true;
             }
             
-            // if (computerSceneComplete && !lettersSceneLoaded)
-            // {
-            //     Cursor.visible = true;
-            //     Cursor.lockState = CursorLockMode.None;
-            //     SceneManager.LoadScene(lettersSceneIdx);
-            //     lettersSceneLoaded = true;
-            // }
+            if (computerSceneComplete && !lettersSceneLoaded)
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                SceneManager.LoadScene(lettersSceneIdx);
+                lettersSceneLoaded = true;
+                return true;
+            }
+        }
+        
+        if (currentStoryScene.name.Equals("day02_09", StringComparison.OrdinalIgnoreCase))
+        {
+
+            if (!computerSceneLoaded)
+            {
+                SceneManager.LoadScene(computerSceneIdx);
+                computerSceneLoaded = true;
+                return true;
+            }
+            
+            if (computerSceneComplete && !lettersSceneLoaded)
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                SceneManager.LoadScene(lettersSceneIdx);
+                lettersSceneLoaded = true;
+                return true;
+            }
+        }
+        
+        if (currentStoryScene.name.Equals("day03_09", StringComparison.OrdinalIgnoreCase))
+        {
+
+            if (!computerSceneLoaded)
+            {
+                SceneManager.LoadScene(computerSceneIdx);
+                computerSceneLoaded = true;
+                return true;
+            }
+            
+            if (computerSceneComplete && !lettersSceneLoaded)
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                SceneManager.LoadScene(lettersSceneIdx);
+                lettersSceneLoaded = true;
+                return true;
+            }
+        }
+        
+        if (currentStoryScene.name.Equals("day04_11", StringComparison.OrdinalIgnoreCase))
+        {
+
+            if (!computerSceneLoaded)
+            {
+                SceneManager.LoadScene(computerSceneIdx);
+                computerSceneLoaded = true;
+                return true;
+            }
+        }
+        
+        if (currentStoryScene.name.Equals("day05_11", StringComparison.OrdinalIgnoreCase))
+        {
+
+            if (!lettersSceneLoaded)
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                SceneManager.LoadScene(lettersSceneIdx);
+                lettersSceneLoaded = true;
+                return true;
+            }
         }
 
         return false;
+    }
+
+    private void ResetMiniGames()
+    {
+        computerSceneComplete = false;
+        computerSceneLoaded = false;
+        lettersSceneComplete = false;
+        lettersSceneLoaded = false;
     }
 }
