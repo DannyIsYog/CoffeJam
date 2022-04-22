@@ -7,10 +7,10 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private BackgroundController backgroundController;
-    [SerializeField] private RectTransform canvas;
+    public RectTransform canvas;
     [SerializeField] private int computerSceneIdx;
     [SerializeField] private int lettersSceneIdx;
-    
+
     public StorySceneObject currentStoryScene;
     public bool computerSceneLoaded;
     public bool lettersSceneLoaded;
@@ -53,7 +53,7 @@ public class GameController : MonoBehaviour
                 dialogueManager.DisableTextBox();
                 return;
             }
-            
+
             currentStoryScene = currentStoryScene.nextStoryScene;
             backgroundController.SwitchBackground(currentStoryScene.background);
             dialogueManager.StartDialogue(currentStoryScene);
@@ -63,6 +63,7 @@ public class GameController : MonoBehaviour
     public void NextSentence()
     {
         if (IsMiniGamesDay()) return;
+        canvas.gameObject.SetActive(true);
         dialogueManager.DisplayNextSentence();
         ResetMiniGames();
     }
@@ -77,7 +78,7 @@ public class GameController : MonoBehaviour
                 computerSceneLoaded = true;
                 return true;
             }
-            
+
             if (computerSceneComplete && !lettersSceneLoaded)
             {
                 Cursor.visible = true;
@@ -87,7 +88,7 @@ public class GameController : MonoBehaviour
                 return true;
             }
         }
-        
+
         if (currentStoryScene.name.Equals("day02_09", StringComparison.OrdinalIgnoreCase))
         {
 
@@ -97,7 +98,7 @@ public class GameController : MonoBehaviour
                 computerSceneLoaded = true;
                 return true;
             }
-            
+
             if (computerSceneComplete && !lettersSceneLoaded)
             {
                 Cursor.visible = true;
@@ -107,7 +108,7 @@ public class GameController : MonoBehaviour
                 return true;
             }
         }
-        
+
         if (currentStoryScene.name.Equals("day03_09", StringComparison.OrdinalIgnoreCase))
         {
 
@@ -117,7 +118,7 @@ public class GameController : MonoBehaviour
                 computerSceneLoaded = true;
                 return true;
             }
-            
+
             if (computerSceneComplete && !lettersSceneLoaded)
             {
                 Cursor.visible = true;
@@ -127,7 +128,7 @@ public class GameController : MonoBehaviour
                 return true;
             }
         }
-        
+
         if (currentStoryScene.name.Equals("day04_11", StringComparison.OrdinalIgnoreCase))
         {
 
@@ -138,7 +139,7 @@ public class GameController : MonoBehaviour
                 return true;
             }
         }
-        
+
         if (currentStoryScene.name.Equals("day05_11", StringComparison.OrdinalIgnoreCase))
         {
 

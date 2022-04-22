@@ -18,6 +18,7 @@ public class LetterSpawner : MonoBehaviour
     {
         totalLetters = Random.Range(4, 10);
         SpawnLetter();
+        GameController.instance.canvas.gameObject.SetActive(false);
     }
 
     private void Awake()
